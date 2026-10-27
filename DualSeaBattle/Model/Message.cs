@@ -9,20 +9,20 @@ namespace DualSeaBattle.Model
 {   
     public enum MessageType
     {
-        Join, Plactment, Shot, Command, ShotResult, GameStatus, EndGame
+        Join, Placement, Shot, Command, ShotResult, GameStatus, EndGame
     }
 
     public class Message
     {
         public MessageType Type { get; set; }
-        public object? PlayLoad {  get; set; }
+        public object? Playload {  get; set; }
     }
-    public class Shotload
+    public class ShotLoad
     {
         public int Row {  get; set; }
-        public int Column { get; set; }
+        public int Col { get; set; }
     }
-    public class Placementload
+    public class PlacementLoad
     {
         public List<Ship> Ships { get; set; } = new List<Ship>();  
     }
@@ -35,14 +35,18 @@ namespace DualSeaBattle.Model
         public char Dir { get; set; }
     }
 
-    public class ShotResultload
+    public class ShotResultLoad
     {
         public string? Status { get; set; }
         public int? Row { get; set; }
         public int? Col { get; set; } 
     }
-    public class Commandload
+    public class CommandLoad
     {
         public string? Cmd { get; set; }
+    }
+    public enum CellState
+    {
+        Empty, Ship, Hit, Miss       
     }
 }
