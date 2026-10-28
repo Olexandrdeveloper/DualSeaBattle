@@ -1,9 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Text.Json.Serialization;
 
 namespace DualSeaBattle.Model
 {   
@@ -15,7 +11,12 @@ namespace DualSeaBattle.Model
     public class Message
     {
         public MessageType Type { get; set; }
-        public object? Playload {  get; set; }
+        public ShotLoad? Shot { get; set; }
+        public PlacementLoad? Placement { get; set; }
+        public ShotResultLoad? ShotResult { get; set; }
+        public CommandLoad? Command { get; set; }
+        public GameStatusload? GameStatus { get; set; }
+        // public object? Playload {  get; set; }
     }
     public class ShotLoad
     {
